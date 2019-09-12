@@ -1,0 +1,19 @@
+<div class="single-info row mt-80">
+        <div class="col-lg-6 col-md-12 text-center no-padding">
+            <div  class="info-thumb" *ngFor="let user of requests" >
+            <div class="info-thumb" >
+                <img src='{{user.image}}'class="img-fluid" alt=""></div>>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mt-60 no-padding">
+            <div class="info-content">
+                <h1><font color="white">Main Ceremony</font></h1>
+                <p><font color="white">inappropriate behavior is often laughed off as “boys will be <br> boys,” women face higher conduct standards – especially in the <br>workplace. That’s why it’s crucial that, as women.</font></p>
+                <div class="meta">
+                    <p><font color="white">Date:  Friday, 20 March 2018</font></p>
+                    <p><font color="white">Time:  19.00</font></p>
+                    <p><font color="white">Address:  56/8, West Panthapath.</font></p> 
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,101 @@
+<!-- BEGIN PAGE CONTENT-->
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  
+    
+
+</head>
+<body>
+<div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-edit"></i> Post By {{requests[0].title}}
+                    </div>
+                   
+                </div>
+                <div class="portlet-body">
+                    <div class="table-toolbar">
+                        <div class="row">
+                            <div class="col-md-6">
+                            
+                               
+                            </div>
+                           
+                        </div>
+                    </div>
+                   
+                       <div>
+                            <table  >
+                                <tr>
+                                    <!-- <th>image</th>
+                                    <th>discription</th> -->
+                               <tr> 
+                                       <td rowspan="5"><img src="{{requests[0].image}}" height="500" width="500"></td><!-- this cell will span 3 rows, June, July, & August -->
+                                      <td>
+                                           <b>Creater:-</b><br> {{requests[0].creater}}</td>
+                                       
+                                     </tr>
+                                    <tr>
+                                       <td>   <b>Description:-</b><br>{{requests[0].description}}</td>
+                                      
+                                    </tr>
+                                    <tr>
+                                       <td>  <b>Location:-</b><br>{{requests[0].location}}</td>
+                                    
+                                    </tr>
+                                    <tr>
+                                      <td>  <b>Title:-</b><br>{{requests[0].title}}</td>
+                                         
+                                         </tr>
+                                         <tr>
+                                                <td>  <b>Url:-</b><br><a href="{{requests[0].url}}">{{requests[0].url}}</a></td>
+                                                   
+                                                   </tr>
+                                 </table>
+                                 <div>
+                                    <p>total number of likes: {{numberOfLikes}} <br>total number of Dislikes: {{numberOfDisLikes}}</p>
+                                    <div *ngIf="islike=='0'">
+                                    <button class="btn btn-success" [disabled]="islike" (click)="likeButtonClick()">Like ({{numberOfLikes}})</button>
+                                  </div> 
+                                   <div *ngIf="dislike=='0'"> 
+                                    <button class="btn btn-danger"  [disabled]="dislike" (click)="dislikeButtonClick()">dislike({{numberOfDisLikes}})</button>
+                                   </div> <br>
+                                    <button class="btn btn-danger" (click)="logout()">logout</button>
+                                </div>
+                              
+                                                   
+                </div>
+                <div class="media">
+                    <h3>Comments({{commentcount}})</h3>
+                    <a href="javascript:;" class="pull-left">
+                    <!-- <img alt="" src="../../assets/admin/pages/media/blog/9.jpg" class="media-object"> -->
+                    </a>
+                    <table>
+                      <tbody>
+                        <tr *ngFor="let comment of allComment; let i = index">
+                          <!-- <p>comments[i].comment</p> -->
+                          <!-- <p>i</p> -->
+                        <td>
+                          <h4>{{comment.username}}:{{comment.comment}}</h4>
+                        </td>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- start comment -->
+                  <hr>
+                <div class="post-comment">
+                  <h3>Leave a Comment</h3>
+                  <form [formGroup]="user_comment" (ngSubmit)="submit_comment()" >
+                    <!-- <form (ngSubmit)="submit_comment()" > -->
+
+                      <textarea class="col-md-10 form-control" rows="8" formControlName="comments"></textarea>
+
+                    <button class="margin-top-20 btn blue" type="submit">Post a Comment</button>
+                  </form>
+                </div>
+                  <!-- end comment -->
+            </div>
+    </div></div></div></body>
